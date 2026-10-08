@@ -1,0 +1,19 @@
+{
+  "name": "六级上岸打卡簿",
+  "short_name": "六级闯关",
+  "description": "2026 年 12 月六级备考提醒、闯关、课程与错因记录",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fcf8f0",
+  "theme_color": "#8f7fc2",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

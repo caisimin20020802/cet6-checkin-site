@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8f7fc2" />
+    <meta name="description" content="2026 年 12 月大学英语六级备考提醒、打卡与真题复盘小站" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="六级闯关" />
+    <title>六级上岸打卡簿</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#today" aria-label="返回今日首页">
+          <span class="brand-mark">6</span>
+          <span><b>六级上岸打卡簿</b><small>慢慢来，但每天都往前一点</small></span>
+        </a>
+        <nav aria-label="主要导航">
+          <a href="#today">今日</a><a href="#week">闯关地图</a><a href="#course">课程支线</a><a href="#papers">真题</a><a href="#mistakes">听力错因</a><a href="#goal">目标</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="today">
+          <div class="hero-copy">
+            <p class="eyebrow" id="today-date">今天</p>
+            <h1>今天也在靠近<br /><em>425+</em></h1>
+            <p class="hero-note">不需要一次变得很厉害。完成今天这一关，就很好。</p>
+            <div class="player-hud" aria-label="玩家进度">
+              <span><small>当前等级</small><b id="player-level">Lv.1 初入考场</b></span>
+              <span><small>经验值</small><b id="player-xp">0 XP</b></span>
+              <span><small>已获星星</small><b id="player-stars">0 ★</b></span>
+            </div>
+          </div>
+          <div class="countdown" aria-label="考试倒计时">
+            <span>距离大学英语六级考试</span>
+            <strong id="countdown-days">65</strong>
+            <b>天</b>
+            <small>考试日 · 2026 年 12 月 12 日</small>
+          </div>
+        </section>
+
+        <aside class="mobile-install-tip">
+          <span>📱</span><p><b>可以装到手机主屏幕</b>用手机浏览器打开本站，在分享菜单中选择“添加到主屏幕”，之后就能像小应用一样进入。</p>
+        </aside>
+
+        <section class="today-grid">
+          <article class="panel task-panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">TODAY'S PLAN</p><h2>今日任务</h2></div>
+              <span class="time-pill" id="today-duration">预计 75 分钟</span>
+            </div>
+            <div id="today-tasks" class="checklist"></div>
+            <p class="minimum"><span>忙碌日最低线</span>背单词 15 分钟 + 听力 20 分钟。完成这 35 分钟，就不算断。</p>
+          </article>
+          <aside class="panel progress-panel">
+            <div class="ring" id="overall-ring"><span><strong id="overall-percent">0%</strong><small>总进度</small></span></div>
+            <div><p class="eyebrow">KEEP GOING</p><h2 id="encouragement">第一格，开始吧</h2><p id="overall-copy">打卡记录只保存在你的浏览器里。</p></div>
+          </aside>
+        </section>
+
+        <section class="section game-section" id="week">
+          <div class="section-heading">
+            <div><p class="eyebrow">ADVENTURE MAP</p><h2>六级上岸闯关地图</h2><p>每周是一章，5 个学习任务是 5 个关卡。完成前一关才会解锁下一关；方法课与复盘课是额外课程支线。</p></div>
+            <label class="week-select-label">查看周次<select id="week-select" aria-label="选择周次"></select></label>
+          </div>
+          <div class="week-summary">
+            <div><span>本章探索度</span><strong id="week-percent">0%</strong></div>
+            <div class="progress-track"><i id="week-progress"></i></div>
+            <p id="week-stage"></p>
+          </div>
+          <div id="weekly-tasks" class="quest-map"></div>
+          <div class="rest-area">
+            <div><p class="eyebrow">SUPPLY ITEMS</p><h3>本章 2 张体力恢复卡</h3><p>临时忙、剪片太累或需要放松时使用。使用后暂停当天主线关卡，但仍保留单词与听力最低线。</p></div>
+            <div id="rest-cards" class="rest-cards"></div>
+          </div>
+        </section>
+
+        <section class="section course-section" id="course">
+          <div class="section-heading">
+            <div><p class="eyebrow">SIDE QUESTS</p><h2>课程支线任务</h2><p>听课不是主线刷时长：每节课都绑定一个需要立刻完成的真题动作。课程时间已计入今日和本周预计学习时长。</p></div>
+            <a class="course-link" href="https://www.bilibili.com/cheese/play/ss32720" target="_blank" rel="noopener">打开烤鸭 TV 课程 ↗</a>
+          </div>
+          <div class="course-overview">
+            <div><span class="course-badge">当前课程</span><h3>2026 年六级「听力 + 阅读」备战</h3><p>系统方法课 + 2024—2025 年听力阅读真题逐题解析。优先听方法课；真题讲解只在自己做完、复盘仍不明白时观看。</p></div>
+            <div class="course-meter"><strong id="course-progress-count">0 / 0</strong><span>支线完成</span></div>
+          </div>
+          <div id="course-quests" class="course-quests"></div>
+          <div class="future-course">
+            <div class="future-icon">🔒</div>
+            <div><p class="eyebrow">FUTURE DLC</p><h3>后期阅读与写作翻译课程槽位</h3><p>11 月起开放：阅读课只补仍然不稳的长篇匹配或仔细阅读；写作翻译课每周 1—2 节，每节 20—30 分钟，听完必须产出一篇作文框架或一段翻译。购买具体课程后可再替换成准确课名。</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="papers">
+          <div class="section-heading"><div><p class="eyebrow">PAST PAPERS</p><h2>2021—2026 真题地图</h2><p>旧题拆开练，最近真题留给完整模拟。认真吃透约 17 套素材，真正完整模拟 4 套。</p></div></div>
+          <div class="paper-legend"><span><i class="dot practice"></i>专项训练</span><span><i class="dot half"></i>半套模拟</span><span><i class="dot mock"></i>完整模拟</span></div>
+          <div id="paper-list" class="paper-list"></div>
+        </section>
+
+        <section class="section" id="mistakes">
+          <div class="section-heading"><div><p class="eyebrow">LISTENING LOG</p><h2>听力错因记录</h2><p>每次听力复盘都记一次。两周后看统计，你会发现错误通常高度重复。</p></div></div>
+          <div class="mistake-layout">
+            <form id="mistake-form" class="panel mistake-form">
+              <label>日期<input id="mistake-date" type="date" min="2026-10-08" max="2026-12-11" required /></label>
+              <label>真题/材料<input id="mistake-source" type="text" placeholder="例如：2023 年 6 月第一套听力" required /></label>
+              <label>错因类别<select id="mistake-category" required></select></label>
+              <label>具体记录<textarea id="mistake-note" rows="3" placeholder="哪句话没听出？正确定位是什么？下次怎么做？"></textarea></label>
+              <button class="primary-button" type="submit">保存这条错因</button>
+            </form>
+            <div class="panel mistake-overview">
+              <h3>我的错因分布</h3>
+              <div id="mistake-bars"></div>
+              <div class="mistake-history"><h3>最近记录</h3><div id="mistake-history"></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="goal">
+          <div class="goal-card">
+            <div><p class="eyebrow">SCORE TARGET</p><h2>不是重新学英语，是把能力找回来</h2><p>听力从拖后腿变成拿基本分，阅读承担抢分，写作与翻译恢复到过去的正常水平。</p></div>
+            <div class="score-main"><span>总分目标</span><strong>425<sup>+</sup></strong><small>平时模考目标 440—460</small></div>
+            <div class="strategy-grid">
+              <article><span>🎧</span><b>听力提升</b><p>每天连续输入，目标 130—140 分</p></article>
+              <article><span>📖</span><b>阅读抢分</b><p>仔细阅读优先，目标 175—185 分</p></article>
+              <article><span>✍️</span><b>写译恢复</b><p>结构稳定、少犯错，目标 125—135 分</p></article>
+            </div>
+          </div>
+          <div class="settings-row">
+            <button id="export-button" class="ghost-button">导出打卡备份</button>
+            <label class="ghost-button import-button">导入打卡备份<input id="import-input" type="file" accept="application/json" /></label>
+            <button id="reset-button" class="text-button">清空本机记录</button>
+          </div>
+        </section>
+      </main>
+      <footer><p>2026 六级上岸计划 · 2026.10.08—2026.12.11</p><p>记录保存在当前浏览器的本地存储中。</p></footer>
+      <nav class="mobile-bottom-nav" aria-label="手机端快捷导航">
+        <a href="#today"><span>⌂</span>今日</a>
+        <a href="#week"><span>✦</span>闯关</a>
+        <a href="#course"><span>▷</span>课程</a>
+        <a href="#mistakes"><span>✎</span>错因</a>
+        <a href="#goal"><span>◎</span>目标</a>
+      </nav>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
